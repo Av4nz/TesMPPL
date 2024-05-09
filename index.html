@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form,
+      input,
+      textarea,
+      button {
+        display: block;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LOGIN SEBAGAI ORGANISASI NIRLABA</h1>
+    <div class="form">
+      <form id="login-organisasi" action="/addUserOG" method="post">
+        <input
+          type="text"
+          name="nama_og"
+          id="nama_og"
+          placeholder="Nama Organisasi"
+          required
+        />
+        <textarea
+          name="desk_og"
+          id="desk_og"
+          required
+        ></textarea>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  </body>
+</html>
