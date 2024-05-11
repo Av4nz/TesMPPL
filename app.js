@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/OgLogin', (req, res) => {
+    res.sendFile(__dirname + '/OgLogin.html');
+});
+
 app.post("/addUserOG", async (req, res) => {
     const { nama_og, desk_og } = req.body;
     try {

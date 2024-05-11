@@ -2,6 +2,12 @@ POST http://localhost:3000/addUserOG
 Content-Type: application/json
 
 {
-    "nama" : "asdasdad",
-    "deskripsi" : "asasdfgsdfg"
+    "nama_og" : "hai",
+    "desk_og" : "hallo"
 }
+
+###
+GET http://localhost:3000/userOG
+
+###
+GET http://localhost:3000/addUserOG
