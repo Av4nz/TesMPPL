@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/frontend/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
 app.post("/addUserOG", async(req, res) => {
