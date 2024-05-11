@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.post("/addUserOG", async(req, res) => {
+app.post("/addUserOG", async (req, res) => {
     const { nama_og, desk_og } = req.body;
     try {
         const result = await prisma.userOg.create({
@@ -24,16 +24,23 @@ app.post("/addUserOG", async(req, res) => {
                 deskripsi: desk_og
             }    
         });
-        res.send(result)
+        console.log("data sent")
+        res.redirect('/userOG');
     } catch (e) {
         console.error("errorrr", e)
         res.status(500).json({ error: "Internal server error" });
     }
 })
 
-app.get('/addUserOG', (req, res) => {
-    console.log("get addUserOG")
-    res.send()
+app.get('/UserOG', async (req, res) => {
+    try {
+        const allUserOGs = await prisma.userOg.findMany();
+        res.json(allUserOGs);
+
+    } catch (error) {
+        console.error("Error retrieving user OGs:", e);
+        res.status(500).json({ error: "Internal server error" });
+    }
 })
 
 app.listen(port, () => {
